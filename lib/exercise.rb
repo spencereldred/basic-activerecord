@@ -104,14 +104,55 @@ require "./lib/order"
 # p avg.to_s.to_f
 # p '*' * 20
 
-avg = Order.average(:amount)
-p avg.to_s.to_f.round(2)
-p '*' * 20
+# avg = Order.average(:amount)
+# p avg.to_s.to_f.round(2)
+# p '*' * 20
+#
+# min = Order.minimum(:amount)
+# p min.to_s.to_f
+# p '*' * 20
 
-min = Order.minimum(:amount)
-p min.to_s.to_f
-p '*' * 20
+# max = Order.maximum(:amount)
+# p max.to_s.to_f
+# p '*' * 20
 
-max = Order.maximum(:amount)
-p max.to_s.to_f
+# min_by_id = Order.all.group(:customer_id).minimum(:amount)
+# min_by_id.each do |min|
+#   p min[1].to_s.to_f
+# end
+# p '*' * 20
+#
+# max_by_id = Order.all.group(:customer_id).maximum(:amount)
+# max_by_id.each do |max|
+#   p max[1].to_s.to_f
+# end
+# p '*' * 20
+#
+# customers = Customer.where(state: 'Colorado')
+# customers.each do |customer|
+#   p customer
+# end
+# p '*' * 20
+#
+# customers = Customer.where(state: 'Colorado', city: 'Rigobertoside')
+# customers.each do |customer|
+#   p customer
+# end
+# p '*' * 20
+
+# customers = Customer.all
+# customers.each do |customer|
+#   p customer
+# end
+# p '*' * 20
+#
+# customers = Customer.where("state = 'Ohio' OR state = 'Virginia'")
+# customers.each do |customer|
+#   p customer
+# end
+# p '*' * 20
+
+item = Item.where(description: "snow board")
+item[0].name = 'board01'
+p item
 p '*' * 20
